@@ -22,8 +22,9 @@ function agregarCardAHTML(evento) {
     card.appendChild(imagen);
 
     let tituloCard = document.createElement("h3");
+    tituloCard.setAttribute("class","tituloCard")
     tituloCard.innerText = evento.artista;
-
+    
     card.appendChild(tituloCard);
 
     let botonesCard = document.createElement("div");
@@ -33,14 +34,13 @@ function agregarCardAHTML(evento) {
 
     let precio = document.createElement("p");
     precio.setAttribute("class", "precio")
-    precio.innerText = "$" + evento.precio;
+    precio.innerHTML = "$" + evento.precio;
 
     botonesCard.appendChild(precio);
 
     let botonComprar = document.createElement("button");
     botonComprar.setAttribute("class","botonComprar");
     botonComprar.innerText = "Comprar";
-
     botonesCard.appendChild(botonComprar);
 
 };
@@ -82,7 +82,7 @@ function buscar(){
 
     };
 
-    
+
 
 };
 
@@ -90,11 +90,12 @@ function buscar(){
 
 class Evento {
 
-    constructor (artista, precio, stock, img){
+    constructor (artista, precio, stock, img, id){
         this.artista = artista;
         this.precio = precio;
         this.stock = stock;
         this.img = img;
+        this.id = id;
     };
 
 };
@@ -117,9 +118,9 @@ class Carrito {
 
 };
 
-let evento1 = new Evento("Boris Brejcha", 7200, 70, "./media/img/boris_brejcha.png");
-let evento2 = new Evento("Solomun", 5300, 30,"./media/img/solomun.jpeg");
-let evento3 = new Evento("Green Velvet", 6700, 50, "./media/img/green_velvet.jpeg");
+let evento1 = new Evento("Boris Brejcha", 7200, 70, "./media/img/boris_brejcha.png",1);
+let evento2 = new Evento("Solomun", 5300, 30,"./media/img/solomun.jpeg", 2);
+let evento3 = new Evento("Green Velvet", 6700, 50, "./media/img/green_velvet.jpeg",3);
 
 eventos.push(evento1 , evento2 , evento3);
 
@@ -127,8 +128,9 @@ eventos.forEach(evento => agregarCardAHTML(evento));
 
 buscador.addEventListener("input",buscar);
 
-contenedorCardsEventos.addEventListener("click",(e) => {
-    if (e.target.className == "botonComprar"){
-     console.log(e.target)
-    }
-});
+
+
+
+
+
+

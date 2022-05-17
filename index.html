@@ -11,6 +11,15 @@
     <title>Smart Ticket 🎟</title>
 </head>
 <body>
+    <div id="contenedorModalUsuario">
+        <div id="modalUsuario">
+
+            <p>¡Hola! Antes que nada, dinos tu nombre:</p>
+            <input id="inputNombreUsuario" type="text" placeholder="Ingresa tu nombre aquí y presiona Enter para confirmar.">
+
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="contenedorNav">
@@ -33,13 +42,12 @@
     </header>
 
     <main>
+
         <div class="contenedorPrincipal">
-            <h1>¡Te damos la bienvenida!</h1>
+            <h1 id="bienvenida"></h1>
             <img id="imgBienvenida" src="./Fire hair-bro.svg" alt="Bienvenida">
             <p>¿A qué evento te gustaría asistir?</p>
-            <div class="contenedorBuscador">
-                <input id="buscador" type="text" placeholder="Buscar evento">
-            </div>
+            <input id="buscador" type="text" placeholder="Buscar evento">
         </div>
 
         <div id="contenedorEventos">
@@ -57,6 +65,7 @@
 
     </footer>
 
-    <script src="./app.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/modal_inicio.js"></script>
 </body>
 </html>
