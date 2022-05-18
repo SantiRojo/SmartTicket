@@ -11,7 +11,7 @@ const carrito = [];
 function agregarCardAHTML(evento) {
 
     let card = document.createElement("div");
-    card.setAttribute("class","card");
+    card.setAttribute("class","cards");
 
     contenedorCardsEventos.appendChild(card);
 
